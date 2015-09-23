@@ -1,2 +1,73 @@
-# summernote-bundle
-FMSummernoteBundle, adds Summernote editor to your symfony2 project [WIP]
+FMSummernoteBundle
+==============
+
+FMSummernoteBundle adds summenote bundle 
+
+## Installation
+
+
+### Step 1: Installation
+
+Using Composer, just add the following configuration to your `composer.json`:
+
+Or you can use composer to install this bundle:
+Add FMSummernoteBundle in your composer.json:
+
+```sh
+    composer require helios-ag/fm-summernote-bundle
+```
+
+Now tell composer to download the bundle by running the command:
+
+```sh
+    composer update helios-ag/fm-summernote-bundle
+```
+
+### Step 2: Enable the bundle
+
+Finally, enable the bundle in the kernel:
+
+``` php
+<?php
+// app/AppKernel.php
+
+public function registerBundles()
+{
+    $bundles = array(
+        // ...
+        new FM\SummernoteBundle\FMSummernoteBundle(),
+    );
+}
+```
+
+## Configuration
+
+You can configure bundle as follows
+
+```yaml
+fm_summernote:
+    plugins:
+        - video 
+        - elfinder # by default plugins not set, bundle comes with elfinder plugin / provides integration with FMElfinderBundle
+    selector: .summernote #defines summernote selector for apply to
+    toolbar: # define toolbars, if no toolbar configured, default toolbars defined
+        ['style', ['style']]
+    extra_toolbar: # extra toolbar can be used for plugins toolbar and as additional toolbar setings, when 'toolbar' option is omitted
+        elfinder: [elfinder]
+    width: 600
+    height: 400
+    include_jquery: true #include js libraries, if your template already have them, set to false
+    include_bootstrap: true
+    include_fontawesome: true
+
+```
+
+##Usage
+
+Twig template example
+
+```twig
+    {{ summenote_init() }}    
+    <textarea class="summernote"></textarea>  
+```    
+
