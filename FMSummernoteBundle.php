@@ -5,10 +5,8 @@ namespace FM\SummernoteBundle;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * Class FMSummernoteBundle
- * @package FM\SummernoteBundle
+ * Class FMSummernoteBundle.
  */
 class FMSummernoteBundle extends Bundle
 {
-
 }
