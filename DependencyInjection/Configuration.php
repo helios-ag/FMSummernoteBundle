@@ -6,8 +6,7 @@ use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 /**
- * Class Configuration
- * @package FM\SummernoteBundle\DependencyInjection
+ * Class Configuration.
  */
 class Configuration implements ConfigurationInterface
 {
@@ -57,5 +56,4 @@ class Configuration implements ConfigurationInterface
 
         return $treeBuilder;
     }
-
 }

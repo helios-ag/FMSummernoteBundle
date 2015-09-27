@@ -2,20 +2,18 @@
 
 namespace FM\SummernoteBundle\DependencyInjection;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 /**
- * Class FMSummernoteExtension
- * @package FM\SummernoteBundle\DependencyInjection
+ * Class FMSummernoteExtension.
  */
 class FMSummernoteExtension extends Extension
 {
-
     /**
-     * @param array $configs
+     * @param array            $configs
      * @param ContainerBuilder $container
      */
     public function load(array $configs, ContainerBuilder $container)
@@ -43,5 +41,4 @@ class FMSummernoteExtension extends Extension
     {
         return 'http://helios-ag.github.io/schema/dic/fm_summernote';
     }
-
 }
