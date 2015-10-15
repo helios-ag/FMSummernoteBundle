@@ -1,7 +1,7 @@
 FMSummernoteBundle
 ==============
 
-FMSummernoteBundle adds summenote bundle 
+FMSummernoteBundle adds summernote bundle 
 
 ## Installation
 
@@ -67,7 +67,7 @@ fm_summernote:
 Twig template example
 
 ```twig
-    {{ summenote_init() }}    
+    {{ summernote_init() }}    
     <textarea class="summernote"></textarea>  
 ```    
 
