@@ -1,15 +1,14 @@
-{% block stylesheets %}
-    <link href="{{ asset(base_path ~ sn.bootstrap_css_path) }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset(base_path ~ sn.fontawesome_path) }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset(base_path ~ sn.summernote_css_path) }}" rel="stylesheet" type="text/css">
-{% endblock %}
-
 {% if sn.include_jquery %}
     <script src="{{ asset(base_path ~ sn.jquery_path) }}"></script>
 {% endif %}
 {% if sn.include_bootstrap %}
+    <link href="{{ asset(base_path ~ sn.bootstrap_css_path) }}" rel="stylesheet" type="text/css">
     <script src="{{ asset(base_path ~ sn.bootstrap_js_path) }}"></script>
 {% endif %}
+{% if sn.include_fontawesome %}
+    <link href="{{ asset(base_path ~ sn.fontawesome_path) }}" rel="stylesheet" type="text/css">
+{% endif %}
+<link href="{{ asset(base_path ~ sn.summernote_css_path) }}" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="{{ asset(base_path ~ sn.summernote_js_path) }}"></script>
 {% if sn.language is not null %}
     <script type="text/javascript" src="{{ asset(base_path ~ 'lang/summernote-'~lang~'.js') }}"></script>

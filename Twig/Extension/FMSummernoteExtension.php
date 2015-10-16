@@ -33,7 +33,7 @@ class FMSummernoteExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('summenote_init', [$this, 'summernoteInit'], ['is_safe' => ['html']]),
+            new \Twig_SimpleFunction('summernote_init', [$this, 'summernoteInit'], ['is_safe' => ['html']]),
         ];
     }
 
