@@ -5,7 +5,7 @@ FMSummernoteBundle adds [summernote](https://github.com/summernote/summernote) b
 
 
 | StyleCI | Downloads | Version | License |
-|-__------|-----------|---------|---------|
+|---------|-----------|---------|---------|
 |[![StyleCI](https://styleci.io/repos/43000455/shield)](https://styleci.io/repos/43000455)|[![Total Downloads](https://poser.pugx.org/helios-ag/fm-summernote-bundle/downloads)](https://packagist.org/packages/helios-ag/fm-summernote-bundle)|[![Latest Stable Version](https://poser.pugx.org/helios-ag/fm-summernote-bundle/v/stable)](https://packagist.org/packages/helios-ag/fm-summernote-bundle)|[![License](https://poser.pugx.org/helios-ag/fm-summernote-bundle/license)](https://packagist.org/packages/helios-ag/fm-summernote-bundle)|
 
 
