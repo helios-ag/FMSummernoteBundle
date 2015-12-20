@@ -1,7 +1,13 @@
 FMSummernoteBundle
-==============
+==================
 
-FMSummernoteBundle adds summernote bundle 
+FMSummernoteBundle adds [summernote](https://github.com/summernote/summernote) bundle
+
+
+| StyleCI | Downloads | Version | License |
+|-__------|-----------|---------|---------|
+|[![StyleCI](https://styleci.io/repos/43000455/shield)](https://styleci.io/repos/43000455)|[![Total Downloads](https://poser.pugx.org/helios-ag/fm-summernote-bundle/downloads)](https://packagist.org/packages/helios-ag/fm-summernote-bundle)|[![Latest Stable Version](https://poser.pugx.org/helios-ag/fm-summernote-bundle/v/stable)](https://packagist.org/packages/helios-ag/fm-summernote-bundle)|[![License](https://poser.pugx.org/helios-ag/fm-summernote-bundle/license)](https://packagist.org/packages/helios-ag/fm-summernote-bundle)|
+
 
 ## Installation
 
@@ -47,7 +53,7 @@ You can configure bundle as follows
 ```yaml
 fm_summernote:
     plugins:
-        - video 
+        - video
         - elfinder # by default plugins not set, bundle comes with elfinder plugin / provides integration with FMElfinderBundle
     selector: .summernote #defines summernote selector for apply to
     toolbar: # define toolbars, if no toolbar configured, default toolbars defined
@@ -67,7 +73,6 @@ fm_summernote:
 Twig template example
 
 ```twig
-    {{ summernote_init() }}    
+    {{ summernote_init() }}
     <textarea class="summernote"></textarea>  
-```    
-
+```
