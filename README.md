@@ -20,13 +20,13 @@ Or you can use composer to install this bundle:
 Add FMSummernoteBundle in your composer.json:
 
 ```sh
-    composer require helios-ag/fm-summernote-bundle
+composer require helios-ag/fm-summernote-bundle
 ```
 
 Now tell composer to download the bundle by running the command:
 
 ```sh
-    composer update helios-ag/fm-summernote-bundle
+composer update helios-ag/fm-summernote-bundle
 ```
 
 ### Step 2: Enable the bundle
