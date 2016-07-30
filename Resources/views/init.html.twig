@@ -34,7 +34,7 @@
         toolbar: {{ sn.toolbar }}
         {% endif %}
     };
-    $(function() {
+    $(document).ready(function() {
         $("{{ sn.selector }}").summernote(summernoteConfig);
     });
     {% endautoescape %}
