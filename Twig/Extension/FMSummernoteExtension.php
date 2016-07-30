@@ -59,10 +59,10 @@ class FMSummernoteExtension extends \Twig_Extension
         $options['jquery_path'] = $this->parameters['jquery_path'];
         $options['summernote_css_path'] = $this->parameters['summernote_css_path'];
         $options['summernote_js_path'] = $this->parameters['summernote_js_path'];
-
+        $options['jquery_version'] = $this->parameters['jquery_version'];
         $options['toolbar'] = $this->prepareToolbar();
 
-        $base_path = (!isset($this->parameters['base_path']) ? 'bundles/fmsummernote/Jquery'.$this->parameters['jquery_version'].'.x/' : $this->parameters['base_path']);
+        $base_path = (!isset($this->parameters['base_path']) ? 'bundles/fmsummernote/Jquery'.$options['jquery_version'].'.x/' : $this->parameters['base_path']);
 
         return $this->twig->render($template, ['sn' => $options, 'base_path' => $base_path]);
     }

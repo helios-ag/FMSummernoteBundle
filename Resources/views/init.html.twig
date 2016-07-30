@@ -20,23 +20,28 @@
 {% endif %}
 <script type="text/javascript">
     {% autoescape false %}
-    var summernoteConfig = {
-        {% if sn.width is not null %}
-        width: '{{ sn.width }}',
+        var summernoteConfig = {
+            {% if sn.width is not null %}
+            width: '{{ sn.width }}',
+            {% endif %}
+            {% if sn.height is not null %}
+            height: '{{ sn.height }}',
+            {% endif %}
+            {% if sn.language is not null %}
+            lang: '{{ sn.language }}',
+            {% endif %}
+            {% if sn.toolbar is not null %}
+            toolbar: {{ sn.toolbar }}
+            {% endif %}
+        };
+        
+        {% if sn.jquery_verion == 1 %}
+            $(function() {
+        {% else %}
+            $(document).ready(function() {
         {% endif %}
-        {% if sn.height is not null %}
-        height: '{{ sn.height }}',
-        {% endif %}
-        {% if sn.language is not null %}
-        lang: '{{ sn.language }}',
-        {% endif %}
-        {% if sn.toolbar is not null %}
-        toolbar: {{ sn.toolbar }}
-        {% endif %}
-    };
-    $(document).ready(function() {
-        $("{{ sn.selector }}").summernote(summernoteConfig);
-    });
+            $("{{ sn.selector }}").summernote(summernoteConfig);
+        });
     {% endautoescape %}
 
 </script>
