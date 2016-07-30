@@ -48,10 +48,11 @@ public function registerBundles()
 
 ## Configuration
 
-You can configure bundle as follows
+You can configure the bundle as follows, but note that the plugins "elfinder" and "video" are not supported in Jquery2.x.
 
 ```yaml
 fm_summernote:
+    jquery_version: 1 # Default, can be 1 or 2
     plugins:
         - video
         - elfinder # by default plugins not set, bundle comes with elfinder plugin / provides integration with FMElfinderBundle
