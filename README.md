@@ -63,6 +63,7 @@ fm_summernote:
         elfinder: [elfinder]
     width: 600
     height: 400
+    language: ‘’ # define language (with language culture code like de-DE, fr-FR, etc.) by default, it is in english
     include_jquery: true #include js libraries, if your template already have them, set to false
     include_bootstrap: true
     include_fontawesome: true
