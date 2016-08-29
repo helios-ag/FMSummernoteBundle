@@ -31,10 +31,16 @@
             lang: '{{ sn.language }}',
             {% endif %}
             {% if sn.toolbar is not null %}
-            toolbar: {{ sn.toolbar }}
+            toolbar: {{ sn.toolbar }},
+            {% endif %}
+            {% if sn.fontname is not null %}
+            fontNames: {{ sn.fontname }},
+            {% endif %}
+            {% if sn.fontnocheck is not null %}
+            fontNamesIgnoreCheck: ['Open Sans', 'Calibri'],
             {% endif %}
         };
-        
+
         {% if sn.jquery_version == 1 %}
             $(function() {
         {% else %}
