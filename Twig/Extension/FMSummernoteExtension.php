@@ -151,7 +151,7 @@ class FMSummernoteExtension extends \Twig_Extension
     }
 
     public function getDefaultFontname(){
-        return "['Arial', 'Times New Roman']";
+        return "['Arial', 'Courier New', 'Helvetica', 'Times New Roman']";
     }
 
     /**
