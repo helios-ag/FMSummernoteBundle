@@ -37,7 +37,7 @@
             fontNames: {{ sn.fontname }},
             {% endif %}
             {% if sn.fontnocheck is not null %}
-            fontNamesIgnoreCheck: sn.fontnocheck,
+            fontNamesIgnoreCheck: {{ sn.fontnocheck }},
             {% endif %}
         };
 
