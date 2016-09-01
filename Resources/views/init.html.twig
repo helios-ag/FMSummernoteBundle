@@ -37,7 +37,7 @@
             fontNames: {{ sn.fontname }},
             {% endif %}
             {% if sn.fontnocheck is not null %}
-            fontNamesIgnoreCheck: ['Open Sans', 'Calibri'],
+            fontNamesIgnoreCheck: sn.fontnocheck,
             {% endif %}
         };
 
