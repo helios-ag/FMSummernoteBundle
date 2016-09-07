@@ -45,8 +45,8 @@ class FMSummernoteExtension extends \Twig_Extension
         $template = $this->parameters['init_template'];
         $options = [];
 
-        $options["fontname"] = count($this->parameters['fontname']) > 0 ? $this->prepareArrayParameter("fontname") : $this->getDefaultFontname();
-        $options["fontnocheck"] = count($this->parameters['fontnocheck'] > 0) ? $this->prepareArrayParameter('fontnocheck') : null;
+        $options['fontname'] = count($this->parameters['fontname']) > 0 ? $this->prepareArrayParameter('fontname') : $this->getDefaultFontname();
+        $options['fontnocheck'] = count($this->parameters['fontnocheck'] > 0) ? $this->prepareArrayParameter('fontnocheck') : null;
         $options['language'] = isset($this->parameters['language']) ? $this->parameters['language'] : null;
         $options['plugins'] = isset($this->parameters['plugins']) ? $this->parameters['plugins'] : null;
         $options['selector'] = $this->parameters['selector'];
@@ -90,23 +90,25 @@ class FMSummernoteExtension extends \Twig_Extension
     }
 
     /**
-     * Return a javascript array
+     * Return a javascript array.
      *
      * @var string name
-     *      The name of the parameter to look for
+     *             The name of the parameter to look for
+     *
      * @return string
      */
-    private function prepareArrayParameter($name){
-        if(isset($this->parameters[$name])){
+    private function prepareArrayParameter($name)
+    {
+        if (isset($this->parameters[$name])) {
             $parameterArray = $this->parameters[$name];
             $count = count($parameterArray);
             $str = "['".$parameterArray[0]."'";
 
-            for($i=1;$i<$count;$i++){
+            for ($i = 1; $i < $count; $i++) {
                 $str .= ", '".$parameterArray[$i]."'";
             }
 
-            $str .= "]";
+            $str .= ']';
 
             return $str;
         }
@@ -150,7 +152,8 @@ class FMSummernoteExtension extends \Twig_Extension
                 ['help', ['help']],";
     }
 
-    public function getDefaultFontname(){
+    public function getDefaultFontname()
+    {
         return "['Arial', 'Courier New', 'Helvetica', 'Times New Roman']";
     }
 
