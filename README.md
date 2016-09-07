@@ -67,6 +67,8 @@ fm_summernote:
     include_jquery: true #include js libraries, if your template already have them, set to false
     include_bootstrap: true
     include_fontawesome: true
+    fontname : ['Open Sans', 'Calibri'] #OPTIONAL set the font to use in Summernote
+    fontnocheck : ['Open Sans'] #OPTIONAL Summernote checks if fonts are set in your CSS and won't allow them if it can not find them excepts for those listed here
 
 ```
 

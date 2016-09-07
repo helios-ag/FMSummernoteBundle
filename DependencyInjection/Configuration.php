@@ -53,6 +53,14 @@ class Configuration implements ConfigurationInterface
                             ->prototype('variable')->end()
                     ->end()
                 ->end()
+                ->arrayNode('fontname')
+                    ->prototype('variable')
+                    ->end()
+                ->end()
+                ->arrayNode('fontnocheck')
+                    ->prototype('variable')
+                    ->end()
+                ->end()
             ->end();
 
         return $treeBuilder;
