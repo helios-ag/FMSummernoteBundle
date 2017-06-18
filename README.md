@@ -52,23 +52,21 @@ You can configure the bundle as follows, but note that the plugins "elfinder" an
 
 ```yaml
 fm_summernote:
-    jquery_version: 1 # Default, can be 1 or 2
     plugins:
         - video
         - elfinder # by default plugins not set, bundle comes with elfinder plugin / provides integration with FMElfinderBundle
     selector: .summernote #defines summernote selector for apply to
     toolbar: # define toolbars, if no toolbar configured, default toolbars defined
-        ['style', ['style']]
+        style: [style]
+        bold: [bold]
     extra_toolbar: # extra toolbar can be used for plugins toolbar and as additional toolbar setings, when 'toolbar' option is omitted
         elfinder: [elfinder]
     width: 600
     height: 400
-    language: ‘’ # define language (with language culture code like de-DE, fr-FR, etc.) by default, it is in english
+    language: '' # define language (with language culture code like de-DE, fr-FR, etc.) by default, it is in english
     include_jquery: true #include js libraries, if your template already have them, set to false
     include_bootstrap: true
     include_fontawesome: true
-    fontname : ['Open Sans', 'Calibri'] #OPTIONAL set the font to use in Summernote
-    fontnocheck : ['Open Sans'] #OPTIONAL Summernote checks if fonts are set in your CSS and won't allow them if it can not find them excepts for those listed here
 
 ```
 
