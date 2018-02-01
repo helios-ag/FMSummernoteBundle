@@ -46,7 +46,7 @@ class FMSummernoteExtension extends \Twig_Extension
         $options = [];
 
         $options['fontname'] = count($this->parameters['fontname']) > 0 ? $this->prepareArrayParameter('fontname') : $this->getDefaultFontname();
-        $options['fontnocheck'] = count($this->parameters['fontnocheck'] > 0) ? $this->prepareArrayParameter('fontnocheck') : null;
+        $options['fontnocheck'] = count($this->parameters['fontnocheck']) > 0 ? $this->prepareArrayParameter('fontnocheck') : null;
         $options['language'] = isset($this->parameters['language']) ? $this->parameters['language'] : null;
         $options['plugins'] = isset($this->parameters['plugins']) ? $this->parameters['plugins'] : null;
         $options['selector'] = $this->parameters['selector'];
