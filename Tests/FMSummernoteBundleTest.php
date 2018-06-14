@@ -1,17 +1,17 @@
 <?php
 
-namespace FM\RFMBundle\Tests;
+namespace FM\SummernoteBundle\Tests;
 
-use FM\RFMBundle\FMRFMBundle;
+use FM\SummernoteBundle\FMSummernoteBundle;
 
 /**
- * Class FMRFMBundleTest
+ * Class FMSummernoteBundleTest.
  */
-class FMRFMBundleTest extends \PHPUnit\Framework\TestCase
+class FMSummernoteBundleTest extends \PHPUnit\Framework\TestCase
 {
     public function testBundle()
     {
-        $bundle = new FMRFMBundle();
+        $bundle = new FMSummernoteBundle();
         $this->assertInstanceOf('Symfony\Component\HttpKernel\Bundle\Bundle', $bundle);
     }
 
@@ -21,17 +21,14 @@ class FMRFMBundleTest extends \PHPUnit\Framework\TestCase
             ->disableOriginalConstructor()
             ->setMethods(array('addCompilerPass'))
             ->getMock();
+
         $containerBuilder
             ->expects($this->at(0))
             ->method('addCompilerPass')
-            ->with($this->isInstanceOf('FM\RFMBundle\DependencyInjection\Compiler\TwigFormPass'))
+            ->with($this->isInstanceOf('FM\SummernoteBundle\DependencyInjection\Compiler\TwigFormPass'))
             ->will($this->returnSelf());
-        $containerBuilder
-            ->expects($this->at(1))
-            ->method('addCompilerPass')
-            ->with($this->isInstanceOf('Symfony\Component\EventDispatcher\DependencyInjection\RegisterListenersPass'))
-            ->will($this->returnSelf());
-        $bundle = new FMRFMBundle();
+
+        $bundle = new FMSummernoteBundle();
         $bundle->build($containerBuilder);
     }
 }

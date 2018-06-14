@@ -23,12 +23,6 @@ Add FMSummernoteBundle in your composer.json:
 composer require helios-ag/fm-summernote-bundle
 ```
 
-Now tell composer to download the bundle by running the command:
-
-```sh
-composer update helios-ag/fm-summernote-bundle
-```
-
 ### Step 2: Enable the bundle
 
 Finally, enable the bundle in the kernel:
@@ -67,7 +61,6 @@ fm_summernote:
     include_jquery: true #include js libraries, if your template already have them, set to false
     include_bootstrap: true
     include_fontawesome: true
-
 ```
 
 ##Usage
