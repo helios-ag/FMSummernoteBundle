@@ -5,9 +5,6 @@
     <link href="{{ asset(base_path ~ sn.bootstrap_css_path) }}" rel="stylesheet" type="text/css">
     <script src="{{ asset(base_path ~ sn.bootstrap_js_path) }}"></script>
 {% endif %}
-{% if sn.include_fontawesome %}
-    <link href="{{ asset(base_path ~ sn.fontawesome_path) }}" rel="stylesheet" type="text/css">
-{% endif %}
 <link href="{{ asset(base_path ~ sn.summernote_css_path) }}" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="{{ asset(base_path ~ sn.summernote_js_path) }}"></script>
 {% if sn.language is not null %}
