@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Yaml\Parser;
 
 /**
- * Class FMSummernoteExtensionTest
+ * Class FMSummernoteExtensionTest.
  */
 class FMSummernoteExtensionTest extends AbstractExtensionTestCase
 {
