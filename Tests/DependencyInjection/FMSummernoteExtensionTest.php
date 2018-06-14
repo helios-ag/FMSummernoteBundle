@@ -36,22 +36,21 @@ class FMSummernoteExtensionTest extends AbstractExtensionTestCase
     protected function getMinimalConfiguration()
     {
         $yaml = <<<'EOF'
-fm_summernote:
-    plugins:
-        - video
-        - elfinder # by default plugins not set, bundle comes with elfinder plugin / provides integration with FMElfinderBundle
-    selector: .summernote #defines summernote selector for apply to
-    toolbar: # define toolbars, if no toolbar configured, default toolbars defined
-        style: [style]
-        bold: [bold]
-    extra_toolbar: # extra toolbar can be used for plugins toolbar and as additional toolbar setings, when 'toolbar' option is omitted
-        elfinder: [elfinder]
-    width: 600
-    height: 400
-    language: '' # define language (with language culture code like de-DE, fr-FR, etc.) by default, it is in english
-    include_jquery: true #include js libraries, if your template already have them, set to false
-    include_bootstrap: true
-    include_fontawesome: true
+plugins:
+    - video
+    - elfinder # by default plugins not set, bundle comes with elfinder plugin / provides integration with FMElfinderBundle
+selector: .summernote #defines summernote selector for apply to
+toolbar: # define toolbars, if no toolbar configured, default toolbars defined
+    style: [style]
+    bold: [bold]
+extra_toolbar: # extra toolbar can be used for plugins toolbar and as additional toolbar setings, when 'toolbar' option is omitted
+    elfinder: [elfinder]
+width: 600
+height: 400
+language: '' # define language (with language culture code like de-DE, fr-FR, etc.) by default, it is in english
+include_jquery: true #include js libraries, if your template already have them, set to false
+include_bootstrap: true
+include_fontawesome: true
 EOF;
         $parser = new Parser();
 
