@@ -24,7 +24,7 @@
     "require-dev" : {
       "symfony/phpunit-bridge": "^4.0",
       "matthiasnoback/symfony-config-test":  "^3",
-      "matthiasnoback/symfony-dependency-injection-test": "^2",
+      "matthiasnoback/symfony-dependency-injection-test": "^2"
     },
     "suggest": {
       "helios-ag/fm-elfinder-bundle": "Elfinder bundle, file manager",
