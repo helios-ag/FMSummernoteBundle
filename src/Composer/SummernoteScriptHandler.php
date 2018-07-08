@@ -4,8 +4,8 @@ namespace FM\SummernoteBundle\Composer;
 
 use Composer\Script\CommandEvent;
 use Composer\Script\Event;
-use Sensio\Bundle\DistributionBundle\Composer\ScriptHandler;
 use FM\SummernoteBundle\Installer\SummernoteInstaller;
+use Sensio\Bundle\DistributionBundle\Composer\ScriptHandler;
 
 class SummernoteScriptHandler extends ScriptHandler
 {

@@ -14,9 +14,9 @@ class FMSummernoteExtensionTest extends AbstractExtensionTestCase
 {
     protected function getContainerExtensions()
     {
-        return array(
+        return [
             new FMSummernoteExtension(),
-        );
+        ];
     }
 
     public function testServices()
@@ -28,8 +28,8 @@ class FMSummernoteExtensionTest extends AbstractExtensionTestCase
     public function testMinimumConfiguration()
     {
         $this->container = new ContainerBuilder();
-        $loader          = new FMSummernoteExtension();
-        $loader->load(array($this->getMinimalConfiguration()), $this->container);
+        $loader = new FMSummernoteExtension();
+        $loader->load([$this->getMinimalConfiguration()], $this->container);
         $this->assertTrue($this->container instanceof ContainerBuilder);
     }
 
