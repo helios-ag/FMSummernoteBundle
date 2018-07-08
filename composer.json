@@ -31,7 +31,10 @@
       "helios-ag/fm-rfm-bundle": "Richfilemanager bundle, file manager"
     },
     "autoload": {
-      "psr-4": { "FM\\SummernoteBundle\\": "" }
+      "psr-4": { "FM\\SummernoteBundle\\": "src/" }
+    },
+    "autoload-dev": {
+      "psr-4": { "FM\\SummernoteBundle\\Tests": "tests/" }
     },
     "extra": {
       "branch-alias": {
