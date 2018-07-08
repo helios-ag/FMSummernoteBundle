@@ -34,7 +34,7 @@
       "psr-4": { "FM\\SummernoteBundle\\": "src/" }
     },
     "autoload-dev": {
-      "psr-4": { "FM\\SummernoteBundle\\Tests": "tests/" }
+      "psr-4": { "FM\\SummernoteBundle\\Tests\\": "tests/" }
     },
     "extra": {
       "branch-alias": {
