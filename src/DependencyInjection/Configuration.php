@@ -32,7 +32,7 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('jquery_path')->defaultValue('vendor/jquery.min.js')->end()
                 ->scalarNode('summernote_css_path')->defaultValue('summernote.css')->end()
                 ->scalarNode('summernote_js_path')->defaultValue('summernote.min.js')->end()
-                ->scalarNode('basePath')->end()
+                ->scalarNode('base_path')->end()
                 ->scalarNode('init_template')->defaultValue('FMSummernoteBundle::init.html.twig')->end()
                 ->scalarNode('selector')->defaultValue('.summernote')->end()
                 ->scalarNode('language')->end()
