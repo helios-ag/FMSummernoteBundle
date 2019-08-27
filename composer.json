@@ -19,7 +19,7 @@
     "require": {
       "php":                           "^7.1",
       "symfony/framework-bundle":      "^3.4|^4.0",
-      "symfony/twig-bundle":           "^3.4|^4.0"
+      "symfony/twig-bundle":           "^3.4.x-dev"
     },
     "require-dev" : {
       "symfony/phpunit-bridge": "^4.0",
