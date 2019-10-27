@@ -1,39 +1,51 @@
 language: php
-
 sudo: false
-
 cache:
     directories:
-        - vendor
-        - $HOME/.composer/cache
+        - $HOME/.composer/cache/files
         - $HOME/symfony-bridge/.phpunit
 
 env:
     global:
-        - COMPOSER_PREFER_LOWEST=false
-        - SYMFONY_DEPRECATIONS_HELPER=weak_vendors
-        - SYMFONY_PHPUNIT_BRIDGE_VERSION=4.0.*
-        - SYMFONY_VERSION=3.4.*
         - PHPUNIT_FLAGS="-v"
         - SYMFONY_PHPUNIT_DIR="$HOME/symfony-bridge/.phpunit"
+        - SYMFONY_DEPRECATIONS_HELPER="999999"
+
 matrix:
     fast_finish: true
     include:
+          # Test the latest stable release
         - php: 7.1
-          env: SYMFONY_VERSION=3.4.* SYMFONY_PHPUNIT_BRIDGE_VERSION=4.0.* SYMFONY_DEPRECATIONS_HELPER=weak_vendors
-        - php: 7.1
-          env: SYMFONY_VERSION=4.0.* SYMFONY_PHPUNIT_BRIDGE_VERSION=4.0.* SYMFONY_DEPRECATIONS_HELPER=weak_vendors
+          env: CHECK_PHP_SYNTAX="true"
+
         - php: 7.2
-          env: SYMFONY_VERSION=4.0.* SYMFONY_PHPUNIT_BRIDGE_VERSION=4.0.* SYMFONY_DEPRECATIONS_HELPER=weak_vendors
+
+          # Minimum supported dependencies with the latest and oldest PHP version
+        - php: 7.3
+          env: COMPOSER_FLAGS="--prefer-stable --prefer-lowest" SYMFONY_DEPRECATIONS_HELPER=weak
+
+          # Latest commit to master
+        - php: nightly
+          env: COMPOSER_FLAGS="--ignore-platform-reqs" SYMFONY_PHPUNIT_VERSION=8.4
+
+    allow_failures:
+          # Dev-master is allowed to fail.
+        - php: nightly
+
+before_install:
+    - phpenv config-rm xdebug.ini || true
+    - if [[ "$CHECK_PHP_SYNTAX" == "true" ]]; then wget https://cs.symfony.com/download/php-cs-fixer-v2.phar -O php-cs-fixer; fi
+    - phpenv global 7.2; composer global require --prefer-dist --no-progress --no-scripts --no-plugins symfony/flex dev-master; phpenv global $TRAVIS_PHP_VERSION
 
 install:
-  - composer require --no-update symfony/symfony:${SYMFONY_VERSION}
-  - composer require --no-update symfony/form:${SYMFONY_VERSION}
-  - composer require --dev --no-update symfony/phpunit-bridge:${SYMFONY_PHPUNIT_BRIDGE_VERSION}
-  - composer update --prefer-source `if [[ $COMPOSER_PREFER_LOWEST = true ]]; then echo "--prefer-lowest --prefer-stable"; fi`
+    - composer update $COMPOSER_FLAGS --no-interaction
+    - phpenv global 7.2; ./vendor/bin/simple-phpunit install; phpenv global $TRAVIS_PHP_VERSION
 
 script:
-  - SYMFONY_PHPUNIT_VERSION=6.5 ./vendor/bin/simple-phpunit $PHPUNIT_FLAGS
-
-notifications:
-  email: helios.ag@gmail.com
+    - composer validate --strict --no-check-lock
+    - ./vendor/bin/simple-phpunit $PHPUNIT_FLAGS
+    - if [[ "$CHECK_PHP_SYNTAX" == "true" ]]; then php php-cs-fixer --no-interaction --dry-run --diff -v fix; fi
+    # this checks that the Twig template files contain no syntax errors
+    - ./tests/bin/console lint:twig "src" "tests"
+    # this checks that the YAML config files contain no syntax errors
+    - ./tests/bin/console lint:yaml "tests"
