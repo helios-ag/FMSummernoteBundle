@@ -63,7 +63,7 @@ fm_summernote:
     include_fontawesome: true
 ```
 
-##Usage
+## Usage
 
 Twig template example
 
