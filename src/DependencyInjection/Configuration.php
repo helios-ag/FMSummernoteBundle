@@ -15,8 +15,8 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('fm_summernote');
+        $treeBuilder = new TreeBuilder('fm_summernote');
+        $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
             ->children()
@@ -33,7 +33,7 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('summernote_css_path')->defaultValue('summernote.css')->end()
                 ->scalarNode('summernote_js_path')->defaultValue('summernote.min.js')->end()
                 ->scalarNode('base_path')->end()
-                ->scalarNode('init_template')->defaultValue('FMSummernoteBundle::init.html.twig')->end()
+                ->scalarNode('init_template')->defaultValue('@FMSummernote/init.html.twig')->end()
                 ->scalarNode('selector')->defaultValue('.summernote')->end()
                 ->scalarNode('language')->end()
                 ->arrayNode('plugins')
