@@ -2,10 +2,14 @@
 
 namespace FM\SummernoteBundle\Twig\Extension;
 
+use Twig\Environment;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
+
 /**
  * Class FMSummernoteExtension.
  */
-class FMSummernoteExtension extends \Twig_Extension
+class FMSummernoteExtension extends AbstractExtension
 {
     /**
      * @var array
@@ -13,15 +17,15 @@ class FMSummernoteExtension extends \Twig_Extension
     protected $parameters;
 
     /**
-     * @var \Twig_Environment
+     * @var Environment
      */
     protected $twig;
 
     /**
      * @param $parameters
-     * @param \Twig_Environment $twig
+     * @param Environment $twig
      */
-    public function __construct($parameters, \Twig_Environment $twig)
+    public function __construct($parameters, Environment $twig)
     {
         $this->parameters = $parameters;
         $this->twig = $twig;
@@ -33,7 +37,7 @@ class FMSummernoteExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('summernote_init', [$this, 'summernoteInit'], ['is_safe' => ['html']]),
+            new TwigFunction('summernote_init', [$this, 'summernoteInit'], ['is_safe' => ['html']]),
         ];
     }
 
