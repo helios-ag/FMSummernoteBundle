@@ -28,7 +28,7 @@ class FMSummernoteExtensionTest extends AbstractExtensionTestCase
     public function testMinimumConfiguration()
     {
         $this->container = new ContainerBuilder();
-        $loader = new FMSummernoteExtension();
+        $loader          = new FMSummernoteExtension();
         $loader->load([$this->getMinimalConfiguration()], $this->container);
         $this->assertTrue($this->container instanceof ContainerBuilder);
     }
