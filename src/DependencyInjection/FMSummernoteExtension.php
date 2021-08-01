@@ -12,10 +12,6 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  */
 class FMSummernoteExtension extends Extension
 {
-    /**
-     * @param array            $configs
-     * @param ContainerBuilder $container
-     */
     public function load(array $configs, ContainerBuilder $container)
     {
         $config = $this->processConfiguration(new Configuration(), $configs);

@@ -72,10 +72,10 @@ class SummernoteInstaller
     {
         $this->resolver = (new OptionsResolver())
             ->setDefaults(array_merge([
-                'clear' => null,
+                'clear'    => null,
                 'notifier' => null,
-                'path' => dirname(__DIR__).'/Resources/public',
-                'version' => self::VERSION_LATEST,
+                'path'     => dirname(__DIR__).'/Resources/public',
+                'version'  => self::VERSION_LATEST,
             ], $options))
             ->setAllowedTypes('excludes', 'array')
             ->setAllowedTypes('notifier', ['null', 'callable'])
@@ -143,11 +143,7 @@ class SummernoteInstaller
                 }
 
                 if (!$success) {
-                    throw $this->createException(sprintf(
-                        'Unable to remove the %s "%s".',
-                        $dir ? 'directory' : 'file',
-                        $filePath
-                    ));
+                    throw $this->createException(sprintf('Unable to remove the %s "%s".', $dir ? 'directory' : 'file', $filePath));
                 }
             }
 
@@ -185,17 +181,15 @@ class SummernoteInstaller
     }
 
     /**
-     * @param callable|null $notifier
-     *
      * @return resource
      */
     private function createStreamContext(callable $notifier = null)
     {
         $context = [];
-        $proxy = getenv('https_proxy') ?: getenv('http_proxy');
+        $proxy   = getenv('https_proxy') ?: getenv('http_proxy');
 
         if ($proxy) {
-            $context['proxy'] = $proxy;
+            $context['proxy']           = $proxy;
             $context['request_fulluri'] = (bool) getenv('https_proxy_request_fulluri') ?:
                 getenv('http_proxy_request_fulluri');
         }
@@ -273,7 +267,7 @@ class SummernoteInstaller
         $this->notify($options['notifier'], self::NOTIFY_EXTRACT_PROGRESS, $rewrite);
 
         $from = 'zip://'.$origin.'#'.$file;
-        $to = $options['path'].'/'.$rewrite;
+        $to   = $options['path'].'/'.$rewrite;
 
         foreach ($options['excludes'] as $exclude) {
             if (0 === strpos($rewrite, $exclude)) {
@@ -295,9 +289,8 @@ class SummernoteInstaller
     }
 
     /**
-     * @param callable|null $notifier
-     * @param string        $type
-     * @param mixed         $data
+     * @param string $type
+     * @param mixed  $data
      *
      * @return mixed
      */
