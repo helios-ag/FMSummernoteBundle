@@ -18,7 +18,7 @@
 
     <testsuites>
         <testsuite name="FMSummernoteBundle test suite">
-            <directory suffix="Test.php">./Tests</directory>
+            <directory>./tests</directory>
         </testsuite>
     </testsuites>
 
@@ -26,9 +26,9 @@
         <whitelist addUncoveredFilesFromWhitelist="true">
             <directory>./</directory>
             <exclude>
-                <directory>./Controller</directory>
-                <directory>./Resources</directory>
-                <directory>./Tests</directory>
+                <directory>./src/Controller</directory>
+                <directory>./src/Resources</directory>
+                <directory>./tests</directory>
                 <directory>./vendor</directory>
             </exclude>
         </whitelist>
