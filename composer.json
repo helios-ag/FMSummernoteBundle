@@ -19,7 +19,7 @@
     "require": {
       "php":                           "^7.2 || ^8.0",
       "symfony/framework-bundle":      "^4.4 || ^5.0 || ^5.2",
-      "symfony/twig-bundle":           "^4.4 || ^5.0 || ^5.2"
+      "symfony/twig-bundle":           "^4.4.x-dev"
     },
     "require-dev" : {
       "symfony/phpunit-bridge": "^4.3.5 || ^5.0 || ^5.2",
