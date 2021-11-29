@@ -22,7 +22,7 @@
       "symfony/twig-bundle":           "^4.4 || ^5.0 || ^5.2"
     },
     "require-dev" : {
-      "symfony/phpunit-bridge": "^4.3.5 || ^5.0 || ^5.2",
+      "symfony/phpunit-bridge": "^6.0.0",
       "matthiasnoback/symfony-config-test": "^4.0",
       "matthiasnoback/symfony-dependency-injection-test": "^4.1"
     },
