@@ -1,14 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FM\SummernoteBundle\Twig\Extension;
 
 use Twig\Environment;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
-/**
- * Class FMSummernoteExtension.
- */
 class FMSummernoteExtension extends AbstractExtension
 {
     /**

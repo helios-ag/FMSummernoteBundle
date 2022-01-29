@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FM\SummernoteBundle\Composer;
 
 use Composer\Script\CommandEvent;
