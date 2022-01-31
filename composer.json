@@ -17,12 +17,12 @@
       }
     ],
     "require": {
-      "php":                           "^7.2 || ^8.0",
-      "symfony/framework-bundle":      "^4.4 || ^5.0 || ^5.2",
-      "symfony/twig-bundle":           "^4.4 || ^5.0 || ^5.2"
+      "php":                           "^7.4 || ^8.0 || ^8.1",
+      "symfony/framework-bundle":      "^4.4 || ^5.0 || ^5.2 || ^6.0",
+      "symfony/twig-bundle":           "^4.4 || ^5.0 || ^5.2 || ^6.0"
     },
     "require-dev" : {
-      "symfony/phpunit-bridge": "^4.3.5 || ^5.0 || ^5.2",
+      "symfony/phpunit-bridge": "^4.3.5 || ^5.0 || ^5.2 || ^6.0",
       "matthiasnoback/symfony-config-test": "^4.0",
       "matthiasnoback/symfony-dependency-injection-test": "^4.1"
     },
