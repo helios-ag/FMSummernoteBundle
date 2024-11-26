@@ -1,6 +1,6 @@
 {
     "name": "helios-ag/fm-summernote-bundle",
-    "description": "Summernote bundle, adds Summernote WYSIWYG editor to your Symfony2/3/4 project",
+    "description": "Summernote bundle, adds Summernote WYSIWYG editor to your Symfony project",
     "keywords": ["summernote","WYSIWYG", "editor"],
     "type": "symfony-bundle",
     "homepage": "https://github.com/helios-ag/FMSummernoteBundle",
@@ -17,12 +17,12 @@
       }
     ],
     "require": {
-      "php":                           "^7.4 || ^8.0 || ^8.1",
-      "symfony/framework-bundle":      "^4.4 || ^5.0 || ^5.2 || ^6.0",
-      "symfony/twig-bundle":           "^4.4 || ^5.0 || ^5.2 || ^6.0"
+      "php":                           "^8.1",
+      "symfony/framework-bundle":      "^6.0 || ^7",
+      "symfony/twig-bundle":           "^6.0 || ^7"
     },
     "require-dev" : {
-      "symfony/phpunit-bridge": "^4.3.5 || ^5.0 || ^5.2 || ^6.0",
+      "symfony/phpunit-bridge": "^6.0 || ^7",
       "matthiasnoback/symfony-config-test": "^4.0",
       "matthiasnoback/symfony-dependency-injection-test": "^4.1"
     },
@@ -38,7 +38,7 @@
     },
     "extra": {
       "branch-alias": {
-          "dev-master": "1.0-dev"
+          "dev-master": "2.0-dev"
       }
     }
 }
