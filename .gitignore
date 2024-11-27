@@ -36,3 +36,4 @@
 # Composer PHAR
 /composer.phar
 .php_cs.cache
+composer.lock
