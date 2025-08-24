@@ -1,11 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FM\SummernoteBundle\Tests\DependencyInjection;
 
 use FM\SummernoteBundle\DependencyInjection\FMSummernoteExtension;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Yaml\Parser;
+use PHPUnit\Framework\Attributes\Test;
 
 class FMSummernoteExtensionTest extends AbstractExtensionTestCase
 {
@@ -16,18 +19,20 @@ class FMSummernoteExtensionTest extends AbstractExtensionTestCase
         ];
     }
 
-    public function testServices()
+    #[Test]
+    public function testServices(): void
     {
         $this->load();
         $this->assertContainerBuilderHasService('twig.extension.fm_summernote');
     }
 
-    public function testMinimumConfiguration()
+    #[Test]
+    public function testMinimumConfiguration(): void
     {
         $this->container = new ContainerBuilder();
-        $loader          = new FMSummernoteExtension();
+        $loader = new FMSummernoteExtension();
         $loader->load([$this->getMinimalConfiguration()], $this->container);
-        $this->assertTrue($this->container instanceof ContainerBuilder);
+        $this->assertInstanceOf(ContainerBuilder::class, $this->container);
     }
 
     protected function getMinimalConfiguration(): array

@@ -1,44 +1,81 @@
 {
     "name": "helios-ag/fm-summernote-bundle",
-    "description": "Summernote bundle, adds Summernote WYSIWYG editor to your Symfony2/3/4 project",
-    "keywords": ["summernote","WYSIWYG", "editor"],
+    "description": "Summernote bundle, adds Summernote WYSIWYG editor to your Symfony project",
+    "keywords": ["summernote", "WYSIWYG", "editor", "symfony"],
     "type": "symfony-bundle",
     "homepage": "https://github.com/helios-ag/FMSummernoteBundle",
     "license": "MIT",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "authors": [
-      {
-        "name": "Al Ganiev",
-        "email": "helios.ag@gmail.com"
-      },
-      {
-        "name": "Symfony Community",
-        "homepage": "https://github.com/helios-ag/FMSummernoteBundle/contributors"
-      }
+        {
+            "name": "Al Ganiev",
+            "email": "helios.ag@gmail.com"
+        },
+        {
+            "name": "Symfony Community",
+            "homepage": "https://github.com/helios-ag/FMSummernoteBundle/contributors"
+        }
     ],
     "require": {
-      "php":                           "^7.4 || ^8.0 || ^8.1",
-      "symfony/framework-bundle":      "^4.4 || ^5.0 || ^5.2 || ^6.0",
-      "symfony/twig-bundle":           "^4.4 || ^5.0 || ^5.2 || ^6.0"
+        "php": "^8.1",
+        "ext-json": "*",
+        "symfony/config": "^6.4 || ^7.0",
+        "symfony/dependency-injection": "^6.4 || ^7.0",
+        "symfony/framework-bundle": "^6.4 || ^7.0",
+        "symfony/http-kernel": "^6.4 || ^7.0",
+        "symfony/twig-bundle": "^6.4 || ^7.0"
     },
-    "require-dev" : {
-      "symfony/phpunit-bridge": "^4.3.5 || ^5.0 || ^5.2 || ^6.0",
-      "matthiasnoback/symfony-config-test": "^4.0",
-      "matthiasnoback/symfony-dependency-injection-test": "^4.1"
+    "require-dev": {
+        "phpunit/phpunit": "^10.5",
+        "symfony/phpunit-bridge": "^6.4 || ^7.0",
+        "matthiasnoback/symfony-config-test": "^5.0",
+        "matthiasnoback/symfony-dependency-injection-test": "^5.0",
+        "phpstan/phpstan": "^1.10",
+        "phpstan/phpstan-phpunit": "^1.3",
+        "phpstan/phpstan-symfony": "^1.3",
+        "phpstan/extension-installer": "^1.3",
+        "rector/rector": "^1.0",
+        "vimeo/psalm": "^5.22",
+        "symfony/var-dumper": "^6.4 || ^7.0"
     },
     "suggest": {
-      "helios-ag/fm-elfinder-bundle": "Elfinder bundle, file manager",
-      "helios-ag/fm-rfm-bundle": "Richfilemanager bundle, file manager"
+        "helios-ag/fm-elfinder-bundle": "Elfinder bundle, file manager",
+        "helios-ag/fm-rfm-bundle": "Richfilemanager bundle, file manager"
     },
     "autoload": {
-      "psr-4": { "FM\\SummernoteBundle\\": "src/" }
+        "psr-4": {
+            "FM\\SummernoteBundle\\": "src/"
+        }
     },
     "autoload-dev": {
-      "psr-4": { "FM\\SummernoteBundle\\Tests\\": "tests/" }
+        "psr-4": {
+            "FM\\SummernoteBundle\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "phpstan/extension-installer": true,
+            "symfony/flex": true
+        },
+        "sort-packages": true,
+        "platform": {
+            "php": "8.1.0"
+        }
     },
     "extra": {
-      "branch-alias": {
-          "dev-master": "1.0-dev"
-      }
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        },
+        "symfony": {
+            "allow-contrib": true
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test:coverage": "XDEBUG_MODE=coverage phpunit --coverage-html=var/coverage",
+        "phpstan": "phpstan analyse",
+        "psalm": "psalm",
+        "cs-check": "php-cs-fixer fix --dry-run --diff",
+        "cs-fix": "php-cs-fixer fix"
     }
 }

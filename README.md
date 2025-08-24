@@ -1,43 +1,38 @@
-FMSummernoteBundle
-==================
+# FMSummernoteBundle
 
-FMSummernoteBundle adds [summernote](https://github.com/summernote/summernote) bundle
+[![Tests](https://github.com/helios-ag/FMSummernoteBundle/actions/workflows/test.yaml/badge.svg)](https://github.com/helios-ag/FMSummernoteBundle/actions/workflows/test.yaml)
+[![StyleCI](https://github.styleci.io/repos/43000455/shield?branch=master)](https://github.styleci.io/repos/43000455)
+[![Total Downloads](https://poser.pugx.org/helios-ag/fm-summernote-bundle/downloads)](https://packagist.org/packages/helios-ag/fm-summernote-bundle)
+[![Latest Stable Version](https://poser.pugx.org/helios-ag/fm-summernote-bundle/v/stable)](https://packagist.org/packages/helios-ag/fm-summernote-bundle)
+[![License](https://poser.pugx.org/helios-ag/fm-summernote-bundle/license)](https://packagist.org/packages/helios-ag/fm-summernote-bundle)
 
+FMSummernoteBundle integrates the [Summernote WYSIWYG editor](https://summernote.org/) with Symfony applications.
 
-| Tests | StyleCI | Downloads | Version | License |
-|---------|---------|-----------|---------|---------|
-|[![Tests - Linux](https://github.com/helios-ag/FMSummernoteBundle/actions/workflows/test.yaml/badge.svg)](https://github.com/helios-ag/FMSummernoteBundle/actions/workflows/test.yaml)|[![StyleCI](https://github.styleci.io/repos/43000455/shield?branch=master)](https://github.styleci.io/repos/43000455)|[![Total Downloads](https://poser.pugx.org/helios-ag/fm-summernote-bundle/downloads)](https://packagist.org/packages/helios-ag/fm-summernote-bundle)|[![Latest Stable Version](https://poser.pugx.org/helios-ag/fm-summernote-bundle/v/stable)](https://packagist.org/packages/helios-ag/fm-summernote-bundle)|[![License](https://poser.pugx.org/helios-ag/fm-summernote-bundle/license)](https://packagist.org/packages/helios-ag/fm-summernote-bundle)|
+## Requirements
 
+- PHP 8.0 or higher
+- Symfony 6.0 or higher
+- jQuery (can be included automatically)
 
 ## Installation
 
+### Step 1: Install the bundle
 
-### Step 1: Installation
-
-Using Composer, just add the following configuration to your `composer.json`:
-
-Or you can use composer to install this bundle:
-Add FMSummernoteBundle in your composer.json:
-
-```sh
+```bash
 composer require helios-ag/fm-summernote-bundle
 ```
 
 ### Step 2: Enable the bundle
 
-Finally, enable the bundle in the kernel:
+If you're using Symfony Flex, the bundle will be enabled automatically. Otherwise, enable it in your `config/bundles.php` file:
 
-``` php
-<?php
-// app/AppKernel.php
+```php
+// config/bundles.php
 
-public function registerBundles()
-{
-    $bundles = array(
-        // ...
-        new FM\SummernoteBundle\FMSummernoteBundle(),
-    );
-}
+return [
+    // ...
+    FM\SummernoteBundle\FMSummernoteBundle::class => ['all' => true],
+];
 ```
 
 ## Configuration
