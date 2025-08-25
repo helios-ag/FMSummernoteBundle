@@ -6,8 +6,6 @@ on:
   push:
     branches:
       - 'main'
-    tags:
-      - '*'
 
 env:
   fail-fast: true
@@ -19,10 +17,10 @@ jobs:
     continue-on-error: false
     strategy:
       matrix:
-        php-version: ['8.1', '8.2', '8.3']
+        php-version: ['8.1', '8.2', '8.3', '8.4']
     steps:
       - name: 'Checkout code'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 'Install PHP with extensions'
         uses: shivammathur/setup-php@v2
@@ -30,35 +28,20 @@ jobs:
           coverage: xdebug
           php-version: ${{ matrix.php-version }}
           tools: composer:v2
-          extensions: mbstring, intl, pdo, pdo_sqlite, sqlite3
+          extensions: mbstring, intl
           ini-values: date.timezone=UTC
 
-      - name: 'Cache Composer packages'
-        id: composer-cache
-        uses: actions/cache@v4
+      - name: 'Install project dependencies'
+        run: |
+          composer global config --no-plugins allow-plugins.symfony/flex true
+          composer global require --no-progress --no-scripts --no-plugins symfony/flex
+          composer update --no-interaction --prefer-dist --optimize-autoloader --prefer-stable
+          vendor/bin/simple-phpunit install
+      - name: 'Run tests'
+        run: XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover ./coverage.xml
+      - name: codecov
+        uses: codecov/codecov-action@v5
         with:
-          path: vendor
-          key: php-${{ matrix.php-version }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            php-${{ matrix.php-version }}-composer-
-
-      - name: 'Install Composer dependencies'
-        run: |
-          composer validate --strict
-          composer install --prefer-dist --no-progress --no-suggest --optimize-autoloader --no-interaction
-
-      - name: 'Run PHPUnit'
-        env:
-          SYMFONY_DEPRECATIONS_HELPER: max[total]=0
-        run: php -d memory_limit=-1 ./vendor/bin/phpunit --coverage-clover=coverage.xml
-
-      - name: 'Upload code coverage (if token available)'
-        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/master'
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-        run: |
-          if [ -n "$CODECOV_TOKEN" ]; then
-            curl -s https://codecov.io/bash | bash -s -- -t $CODECOV_TOKEN -f coverage.xml || echo "Codecov upload failed"
-          else
-            echo "Skipping code coverage upload - no token available"
-          fi
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage.xml
+          verbose: true # optional (default = false)
