@@ -1,5 +1,6 @@
 # FMSummernoteBundle
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/da066ca29890488589b830c948386ead)](https://app.codacy.com/gh/helios-ag/FMSummernoteBundle?utm_source=github.com&utm_medium=referral&utm_content=helios-ag/FMSummernoteBundle&utm_campaign=Badge_Grade)
 [![Tests](https://github.com/helios-ag/FMSummernoteBundle/actions/workflows/test.yaml/badge.svg)](https://github.com/helios-ag/FMSummernoteBundle/actions/workflows/test.yaml)
 
 [![Total Downloads](https://poser.pugx.org/helios-ag/fm-summernote-bundle/downloads)](https://packagist.org/packages/helios-ag/fm-summernote-bundle)
