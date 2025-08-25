@@ -39,9 +39,9 @@ jobs:
           vendor/bin/simple-phpunit install
       - name: 'Run tests'
         run: XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover ./coverage.xml
-      - name: codecov
-        uses: codecov/codecov-action@v5
+
+      - name: Run codacy-coverage-reporter
+        uses: codacy/codacy-coverage-reporter-action@v1.3.0
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage.xml
-          verbose: true # optional (default = false)
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: ./coverage.xml
