@@ -5,8 +5,9 @@
 [![Total Downloads](https://poser.pugx.org/helios-ag/fm-summernote-bundle/downloads)](https://packagist.org/packages/helios-ag/fm-summernote-bundle)
 [![Latest Stable Version](https://poser.pugx.org/helios-ag/fm-summernote-bundle/v/stable)](https://packagist.org/packages/helios-ag/fm-summernote-bundle)
 [![License](https://poser.pugx.org/helios-ag/fm-summernote-bundle/license)](https://packagist.org/packages/helios-ag/fm-summernote-bundle)
-
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/7e69b3d893b94af78df72631ee4f5496)](https://app.codacy.com/gh/helios-ag/FMSummernoteBundle/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage)
 FMSummernoteBundle integrates the [Summernote WYSIWYG editor](https://summernote.org/) with Symfony applications.
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/7e69b3d893b94af78df72631ee4f5496)](https://app.codacy.com/gh/helios-ag/FMSummernoteBundle/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 ## Requirements
 
